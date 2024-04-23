@@ -1,24 +1,20 @@
+
 # DM111
 
 ## Project
 
-The project was split in two repositories, the [current one](https://github.com/edilsonjustiniano/dm111) (a.k.a DM111)
-and the [DM111 Promo](https://github.com/edilsonjustiniano/dm111-promo) that will listen some notifications published
-by DM111 and apply some business logic based on the published/consumed events.
+This repository contains the solution of the final project implemented by the DM111 discipline from the Pos Graduation course Mobile and Cloud Development by Inatel.
 
-## Overview
+During the classes was implemented a web service to deal with a minimal structure of supermarket, i.e. The _CRUD_ operations for **Products**, **Users** _(Client and Admin)_, **Shopping Lists**, **Authentication** that uses JWT token. For the final task, it was created a **Promotion API** with the following operations:
 
-This repository contains the solution implemented by the DM111 discipline from the Pos Graduation course Mobile and
-Cloud Development by Inatel.
+- Delete Promo
+- Update Promo
+- Create Promos
+- Fetch Promo by UserID
+- Fetch Valid Promos
+- Fetch PromoID
 
-During the classes was implemented a web service to deal with a minimal structure of supermarket, i.e. The _CRUD_
-operations for **Products**, **Users** _(Client and Admin)_, **Shopping Lists**.
-
-To make these exposed APIs secure it was implemented an **Authentication** API as well using JWT token.
-
-In addition to the auth API an _Interceptor_ was created and all the endpoints that required the authorization was
-added behind this interceptor. It means, only authenticated users could access the resources and in some scenarios only
-authenticated and authorized users were able to perform some operations.
+There is an Insomnia collection ([Insomnia_Collection.json](https://github.com/mateusbrodrigues/dm111/blob/main/Insomnia_Collection.json "Insomnia_Collection.json")) available to make it easier to validate the API.
 
 ## Integrations
 
@@ -68,6 +64,25 @@ The following entities are stored on the Firebase:
     "product_id1",
     "product_id2"
   ]
+}
+```
+
+>Promos
+```json
+{
+ "name": "Promo name",
+ "starting": "YYYY-MM-DD",
+ "expiration": "YYYY-MM-DD",
+ "products": [
+	 {
+	 "productId": "uuid",
+	 "discount": 1 to 99
+	 },
+	  {
+	 "productId": "uuid",
+	 "discount": 1 to 99
+	 }
+ ]
 }
 ```
 
