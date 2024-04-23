@@ -76,11 +76,11 @@ The following entities are stored on the Firebase:
  "products": [
 	 {
 	 "productId": "uuid",
-	 "discount": 1 to 99
+	 "discount": 1
 	 },
 	  {
 	 "productId": "uuid",
-	 "discount": 1 to 99
+	 "discount": 99
 	 }
  ]
 }
