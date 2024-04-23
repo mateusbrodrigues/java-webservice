@@ -1,4 +1,5 @@
 
+
 # DM111
 
 ## Project
@@ -85,6 +86,15 @@ The following entities are stored on the Firebase:
  ]
 }
 ```
+**Regarding Promos API**
+
+There are some validations through the API that are important to mention. 
+
+Operations like CREATE, PUT, DELETE can be made only by the user with ADMIN role. 
+
+The GET promos will return only the valid promos (which is the ones that are valid comparing with the current date).
+
+The Fetch Promos by UserID will return only the valid promos that has one of the productId equal to the user last 3 shopping lists. Those products will be at an attribute called "productsForYou" the other ones, which is not relevant for the user, will be inside "products" attribute. Only the users with the role USER can make this request.
 
 ### Firebase Cloud Message
 
@@ -96,5 +106,4 @@ is published into the FCM topic.
 One more integration added to the application was the **Pub Sub** that is composed by the topic and their subscriptions.
 Whenever a supermarket list has been created, updated or either deleted an event is published through this topic and the
 consumer services will be aware of the change. So, the consumer applications can apply their specific logics.
-
 
