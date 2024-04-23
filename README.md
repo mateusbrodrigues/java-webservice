@@ -97,34 +97,4 @@ One more integration added to the application was the **Pub Sub** that is compos
 Whenever a supermarket list has been created, updated or either deleted an event is published through this topic and the
 consumer services will be aware of the change. So, the consumer applications can apply their specific logics.
 
-## How to set up
 
-In order to prepare the machine to either run or change the project follow the instructions detailed at
-[DM111 setup instructions](DM111-setup.md)
-
-## How to deploy to GAE
-
-To deploy the code to **GAE** (_Google App Engine_), it is necessary first initialize the **gcloud** environment, please run
-the following command:
-
-```
-gcloud init
-```
-
-During the execution of this command, it will be necessary to authenticate at the **Google Cloud** account. After the
-initialization has been completed the deployment will be straightforward you only need to execute the following command.
-
-```
-gcloud app deploy --version 1 dm111/app.yaml
-```
-
-Some data/confirmation will be requested via terminal at the end of this step and as result of the deploy the link to access
-the service via API will be there.
-
-### Deploy multiple services at once
-
-To deploy both services simultaneously, please run the following command:
-
-```
-gcloud app deploy --version 1 dm111/app.yaml dm111-promo/app.yaml
-```
